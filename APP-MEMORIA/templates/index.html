@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal - Estimulación Cognitiva</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #e0f7fa, #fffde7);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        .header-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .motivacion {
+            font-size: 1.3rem;
+            color: #0277bd;
+            margin-bottom: 2rem;
+        }
+
+        .card-ejercicio {
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .card-ejercicio:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-ejercicio {
+            font-size: 1.25rem;
+            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+        }
+
+        .emoji {
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-warning text-center py-4">
+        <h1 class="header-title text-dark">🧠 Estimulación Cognitiva Infantil</h1>
+    </header>
+
+    <main class="container mt-5">
+        <div class="motivacion text-center">
+            🎉 ¡Juega, aprende y entrena tu mente todos los días!
+        </div>
+
+        <div class="row justify-content-center g-4">
+            <!-- Ejercicio 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-ejercicio bg-light text-center p-4">
+                    <div class="emoji mb-3">🧩</div>
+                    <h5 class="card-title">Ejercicio 1</h5>
+                    <p class="card-text">Entrena tu memoria con divertidos retos visuales.</p>
+                    <a href="{{ url_for('ejercicio1') }}" class="btn btn-primary btn-ejercicio">¡Jugar!</a>
+                </div>
+            </div>
+
+            <!-- Ejercicio 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-ejercicio bg-light text-center p-4">
+                    <div class="emoji mb-3">🔢</div>
+                    <h5 class="card-title">Secuencias Lógicas</h5>
+                    <p class="card-text">Completa la serie numérica y descubre el patrón.</p>
+                    <a href="{{ url_for('ejercicio3') }}" class="btn btn-success btn-ejercicio">¡Jugar!</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center bg-dark text-white py-3 mt-5">
+        <p>&copy; 2025 - Estimulación Cognitiva Infantil</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

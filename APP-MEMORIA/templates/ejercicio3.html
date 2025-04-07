@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3 - Secuencias Lógicas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container text-center mt-5">
+    <h1 class="mb-4">Ejercicio de Secuencias Lógicas</h1>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <p class="lead">Completa la secuencia:</p>
+    <div class="fs-4 mb-3">
+        {% for num in secuencia %}
+            {{ num if num is not none else "___" }}
+        {% endfor %}
+    </div>
+
+    <form method="POST" class="mb-4">
+        <input type="number" name="respuesta" class="form-control mb-2" placeholder="Tu respuesta" required>
+        <input type="hidden" name="respuesta_correcta" value="{{ respuesta_correcta }}">
+        <button type="submit" class="btn btn-success">Verificar</button>
+    </form>
+
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Volver al inicio</a>
+</body>
+</html>
